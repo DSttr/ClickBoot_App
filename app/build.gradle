@@ -1,0 +1,28 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.0"
+
+    defaultConfig {
+        applicationId "in.ds.android.clickboot"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 3
+        versionName "2.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+	compile project('/external_sd/AppProject/.NiftyDialogEffects/library')
+	compile 'eu.chainfire:libsuperuser:1.0.0.+'
+	compile 'com.android.support:design:+'
+	compile 'com.android.support:appcompat-v7:+'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}

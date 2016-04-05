@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Click Boot</string>
+	<string name="app_about">Copyright DIKI SATRIA 2016</string>
+	<string name="power_menu_about">naman14 : Material Power Menu</string>
+	<string name="floating_about">oguzdev : Floating Action Button lib</string>
+	<string name="supersu_about">chainfire : Superuser lib</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="root_status">ROOT AVAILABLE</string>
+	<string name="reboot_text">REBOOT</string>
+	<string name="reboot_message">REBOOTING PLEASE WAIT</string>
+	<string name="sf_reboot_text">SOFT REBOOT</string>
+	<string name="sf_reboot_message">REBOOTING PLEASE WAIT</string>
+	<string name="recovery_text">RECOVERY</string>
+	<string name="recovery_message">BOOT IN TO RECOVERY PLEASE WAIT</string>
+	<string name="safe_mode_text">SAFE MODE</string>
+	<string name="safe_mode_message">BOOT IN TO RECOVERY PLEASE WAIT</string>
+	<string name="bootloader_text">BOOTLOADER</string>
+	<string name="bootloader_message">BOOT IN TO RECOVERY PLEASE WAIT</string>
+	<string name="shut_down_text">SHUTDOWN</string>
+	<string name="shuut_down_message">SHUTING DOWN PLEASE WAIT</string>
+	<string name="service_message">SystemOverlay Service started</string>
+	<string name="service_dismise_message">SystemOverlay Service will be dismised</string>
+	<string name="costomview">im custom view</string>
+	<string name="confirm">Are you sure ?</string>
+	
+
+</resources>

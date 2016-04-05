@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:id="@+id/layout_satu"
+	android:orientation="vertical"
+	android:gravity="center">
+
+	
+
+	<android.support.design.widget.CoordinatorLayout
+		android:id="@+id/content"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:gravity="center">
+
+		<LinearLayout
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:gravity="top">
+			
+			<android.support.design.widget.AppBarLayout
+				android:id="@+id/appBarLayout"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@color/primary"
+				android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+				
+
+			<ImageView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:src="@drawable/ic_launcher"
+				android:id="@+id/imageClick"
+				android:layout_margin="10dp"
+				android:layout_gravity="center"
+				android:gravity="center"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:textSize="20sp"
+				android:layout_margin="5dp"
+				android:textStyle="bold"
+				android:textAllCaps="true"
+				android:text="@string/app_name"
+				android:gravity="center"/>
+			
+			</android.support.design.widget.AppBarLayout>
+
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:orientation="vertical">
+
+				<LinearLayout
+					android:layout_height="wrap_content"
+					android:layout_width="match_parent"
+					android:orientation="vertical"
+					android:id="@+id/layut"
+					android:gravity="left"
+					android:layout_weight="1.0">
+
+					<LinearLayout
+						android:layout_height="50dp"
+						android:layout_width="match_parent"
+						android:orientation="horizontal"
+						android:layout_margin="5dp">
+
+						<android.support.design.widget.FloatingActionButton
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							
+							android:src="@drawable/ic_reboot_alpha"
+							app:borderWidth="0dp"
+							app:elevation="4dp"
+							app:pressedTranslationZ="12dp"
+							android:id="@+id/reboot"
+							android:layout_gravity="center"/>
+
+						<TextView
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:text="REBOOT"
+							android:gravity="center"
+							android:layout_gravity="center"
+							android:layout_margin="6dp"/>
+
+					</LinearLayout>
+
+					<View
+						android:background="?android:attr/dividerVertical"
+						android:layout_height="2dp"
+						android:layout_width="match_parent"
+						android:layout_marginRight="10dp"
+						android:layout_marginLeft="10dp"/>
+
+					<LinearLayout
+						android:layout_height="50dp"
+						android:layout_width="match_parent"
+						android:orientation="horizontal"
+						android:layout_margin="5dp">
+
+						<android.support.design.widget.FloatingActionButton
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							
+							android:src="@drawable/soft_reboot"
+							app:borderWidth="0dp"
+							app:elevation="4dp"
+							app:pressedTranslationZ="12dp"
+							android:id="@+id/soft_reboot"
+							android:layout_gravity="center"/>
+
+						<TextView
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:text="SOFT REBOOT"
+							android:gravity="center"
+							android:layout_gravity="center"
+							android:layout_margin="5dp"/>
+
+					</LinearLayout>
+					
+					<View
+						android:background="?android:attr/dividerVertical"
+						android:layout_height="2dp"
+						android:layout_width="match_parent"
+						android:layout_marginRight="10dp"
+						android:layout_marginLeft="10dp"/>
+
+					<LinearLayout
+						android:layout_height="50dp"
+						android:layout_width="match_parent"
+						android:orientation="horizontal"
+						android:layout_margin="5dp">
+
+						<android.support.design.widget.FloatingActionButton
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:src="@drawable/ic_shutdown"
+							app:borderWidth="0dp"
+							app:elevation="4dp"
+							app:pressedTranslationZ="12dp"
+							android:id="@+id/safe_mode"
+							android:layout_gravity="center"/>
+
+						<TextView
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:text="REBOOT SAFE MODE"
+							android:gravity="center"
+							android:layout_gravity="center"
+							android:layout_margin="5dp"/>
+
+					</LinearLayout>
+
+					<View
+						android:background="?android:attr/dividerVertical"
+						android:layout_height="2dp"
+						android:layout_width="match_parent"
+						android:layout_marginRight="10dp"
+						android:layout_marginLeft="10dp"/>
+
+					<LinearLayout
+						android:layout_height="50dp"
+						android:layout_width="match_parent"
+						android:orientation="horizontal"
+						android:layout_margin="5dp">
+
+						<android.support.design.widget.FloatingActionButton
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							
+							android:src="@drawable/boot_recovery"
+							app:borderWidth="0dp"
+							app:elevation="4dp"
+							app:pressedTranslationZ="12dp"
+							android:id="@+id/recovery"
+							android:layout_gravity="center"/>
+
+						<TextView
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:text="REBOOT RECOVERY"
+							android:gravity="center"
+							android:layout_gravity="center"
+							android:layout_margin="5dp"/>
+
+					</LinearLayout>
+
+					<View
+						android:background="?android:attr/dividerVertical"
+						android:layout_height="2dp"
+						android:layout_width="match_parent"
+						android:layout_marginRight="10dp"
+						android:layout_marginLeft="10dp"/>
+					
+					<LinearLayout
+						android:layout_height="50dp"
+						android:layout_width="match_parent"
+						android:orientation="horizontal"
+						android:layout_margin="5dp">
+
+						<android.support.design.widget.FloatingActionButton
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:src="@drawable/ic_shutdown"
+							app:borderWidth="0dp"
+							app:elevation="4dp"
+							app:pressedTranslationZ="12dp"
+							android:id="@+id/bootloader"
+							android:layout_gravity="center"/>
+
+						<TextView
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:text="REBOOT BOOTLOADER"
+							android:gravity="center"
+							android:layout_gravity="center"
+							android:layout_margin="5dp"/>
+
+					</LinearLayout>
+
+					<View
+						android:background="?android:attr/dividerVertical"
+						android:layout_height="2dp"
+						android:layout_width="match_parent"
+						android:layout_marginRight="10dp"
+						android:layout_marginLeft="10dp"/>
+
+					<LinearLayout
+						android:layout_height="50dp"
+						android:layout_width="match_parent"
+						android:orientation="horizontal"
+						android:layout_margin="5dp">
+
+						<android.support.design.widget.FloatingActionButton
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							
+							android:src="@drawable/ic_shutdown"
+							app:borderWidth="0dp"
+							app:elevation="4dp"
+							app:pressedTranslationZ="12dp"
+							android:id="@+id/shutdown"
+							android:layout_gravity="center"/>
+
+						<TextView
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content"
+							android:textSize="12sp"
+							android:textStyle="bold"
+							android:text="POWER OFF"
+							android:gravity="center"
+							android:layout_gravity="center"
+							android:layout_margin="5dp"/>
+
+					</LinearLayout>
+
+					<View
+						android:background="?android:attr/dividerVertical"
+						android:layout_height="2dp"
+						android:layout_width="match_parent"
+						android:layout_marginRight="10dp"
+						android:layout_marginLeft="10dp"/>
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:layout_width="match_parent"
+						android:textSize="12sp"
+						android:textStyle="bold"
+						android:id="@+id/text"
+						android:gravity="center"
+						android:layout_gravity="bottom"/>
+
+				</LinearLayout>
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<android.support.design.widget.FloatingActionButton
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentRight="true"
+			android:layout_gravity="bottom|right"
+			android:layout_marginBottom="10dp"
+			android:layout_marginRight="10dp"
+			android:src="@drawable/ic_action_new"
+			app:borderWidth="0dp"
+			app:elevation="6dp"
+			app:pressedTranslationZ="12dp"
+			android:id="@+id/start_service"/>
+
+	</android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>
+
+
