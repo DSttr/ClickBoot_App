@@ -1,18 +1,15 @@
 package in.ds.android.clickboot;
 
-
-import android.content.*;
 import android.os.*;
 import android.support.design.widget.*;
 import android.support.v7.app.*;
 import android.view.*;
 import android.widget.*;
+import com.gitonway.lee.niftymodaldialogeffects.lib.*;
 import eu.chainfire.libsuperuser.*;
 import in.ds.android.clickboot.*;
 
-import com.gitonway.lee.niftymodaldialogeffects.lib.Effectstype;
-import com.gitonway.lee.niftymodaldialogeffects.lib.NiftyDialogBuilder;
-import android.graphics.*;
+import in.ds.android.clickboot.R;
 
 public class MainActivity extends AppCompatActivity 
 {
@@ -271,7 +268,7 @@ public class MainActivity extends AppCompatActivity
 						.withTitle(getString(R.string.app_about))
 						.withTitleColor("#FFFFFF")
 						.withDividerColor("#11000000")
-						.withMessage("App Version : 2.0 \n\nCREDITS :\n\nnaman14 - Material Power Button \noguzdev - Circular Floating Action Button \nChainfire - SuperUser library \nLiTao : NitfiDialog Efect ")                     //.withMessage(null)  no Msg
+						.withMessage("App Version : 3.0 \n\nCREDITS :\n\nnaman14 - Material Power Button \nChainfire - SuperUser library \nLiTao : NitfiDialog Efect ")                     //.withMessage(null)  no Msg
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
 						.withIcon(getResources().getDrawable(R.drawable.ic_launcher))

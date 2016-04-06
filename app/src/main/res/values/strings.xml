@@ -22,8 +22,6 @@
 	<string name="shuut_down_message">SHUTING DOWN PLEASE WAIT</string>
 	<string name="service_message">SystemOverlay Service started</string>
 	<string name="service_dismise_message">SystemOverlay Service will be dismised</string>
-	<string name="costomview">im custom view</string>
 	<string name="confirm">Are you sure ?</string>
-	
 
 </resources>
