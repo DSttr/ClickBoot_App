@@ -258,31 +258,38 @@ public class MainActivity extends AppCompatActivity
 
 
 			});
-		mServices = (FloatingActionButton)findViewById(R.id.start_service);
+		mServices = (FloatingActionButton)findViewById(R.id.about_app);
 		mServices.setOnClickListener(new View.OnClickListener(){
 
 				@Override
 				public void onClick(View p7)
 				{
 					// TODO: Implement this method
-								//Intent is = new Intent(MainActivity.this, SystemOverlay.class);
-								//startService(is);
-					NiftyDialogBuilder dialogBuilderP6=NiftyDialogBuilder.getInstance(MainActivity.this);
-					switch (p7.getId()){
-						case R.id.start_service:effect=Effectstype.RotateBottom;break;
-					}
-
-					dialogBuilderP6
-						.withTitle("FAB BUG")
+					NiftyDialogBuilder dialogBuilder=NiftyDialogBuilder.getInstance(MainActivity.this);
+					dialogBuilder
+						.withEffect(effect=Effectstype.RotateBottom)
+						.withTitle(getString(R.string.app_about))
 						.withTitleColor("#FFFFFF")
 						.withDividerColor("#11000000")
-						.withMessage("Floating Action Button REMOVED BCOZ MENGGANGGU \nI'm sorry \nheu heu heu")
+						.withMessage("App Version : 2.0 \n\nCREDITS :\n\nnaman14 - Material Power Button \noguzdev - Circular Floating Action Button \nChainfire - SuperUser library \nLiTao : NitfiDialog Efect ")                     //.withMessage(null)  no Msg
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
 						.withIcon(getResources().getDrawable(R.drawable.ic_launcher))
 						.isCancelableOnTouchOutside(true)
 						.withDuration(RUNNABLE_DELAY_MS)
 						.withEffect(effect)
+						.withButton1Text("OK")
+						//.setCustomView(R.layout.custom_view,v.getContext())
+						.setButton1Click(new View.OnClickListener() {
+							@Override
+							public void onClick(View v) {
+
+								finish();
+								
+
+							}
+
+						})
 						.show();
 				}
 			});
@@ -307,10 +314,6 @@ public class MainActivity extends AppCompatActivity
 					}
 				}
 			}).start();
-    }
-	
-	public void dialogShow(View p8){
-        
     }
 
 	private static void setThreadPrio(int prio) {
@@ -349,65 +352,6 @@ public class MainActivity extends AppCompatActivity
 				}, RUNNABLE_DELAY_MS);
         }
     }
-	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu)
-	{
-		// Inflate the menu items for use in the action bar
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.menu, menu);
-		return super.onCreateOptionsMenu(menu);
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item)
-	{
-		// TODO: Implement this method
-		switch (item.getItemId()) {
-			case R.id.item:
-				OnClickListener();
-				return true;
-				}
-		return super.onOptionsItemSelected(item);
-	}
-
-	private void OnClickListener()
-	{
-		// TODO: Implement this method
-		NiftyDialogBuilder dialogBuilder=NiftyDialogBuilder.getInstance(MainActivity.this);
-		dialogBuilder
-			.withEffect(effect=Effectstype.Newspager)
-			.withTitle(getString(R.string.app_about))
-			.withTitleColor("#FFFFFF")
-			.withDividerColor("#11000000")
-			.withMessage("App Version : 2.0 \n\nCREDITS :\n\nnaman14 - Material Power Button \noguzdev - Circular Floating Action Button \nChainfire - SuperUser library \nLiTao : NitfiDialog Efect ")                     //.withMessage(null)  no Msg
-			.withMessageColor("#FFFFFFFF")
-			.withDialogColor("#1E88E5")
-			.withIcon(getResources().getDrawable(R.drawable.ic_launcher))
-			.isCancelableOnTouchOutside(true)
-			.withDuration(RUNNABLE_DELAY_MS)
-			.withEffect(effect)
-			.withButton1Text("OK")
-			//.setCustomView(R.layout.custom_view,v.getContext())
-			.setButton1Click(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-
-					Toast.makeText(v.getContext(), "i'm btn1", Toast.LENGTH_SHORT).show();
-					//hide();
-					dialogShow(v);
-
-				}
-
-				private void hide()
-				{
-					// TODO: Implement this method
-					finish();
-				}
-			})
-			.show();
-		
-	}
 	
 
 	private void tampilkanSnackbar(String message) {
