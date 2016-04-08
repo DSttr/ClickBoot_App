@@ -10,6 +10,7 @@ import eu.chainfire.libsuperuser.*;
 import in.ds.android.clickboot.*;
 
 import in.ds.android.clickboot.R;
+import android.app.*;
 
 public class MainActivity extends AppCompatActivity 
 {
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity
 				public void onClick(View p1)
 				{
 					// TODO: Implement this method
-					NiftyDialogBuilder dialogBuilderP1=NiftyDialogBuilder.getInstance(MainActivity.this);
+					final NiftyDialogBuilder dialogBuilderP1=NiftyDialogBuilder.getInstance(MainActivity.this);
 					switch (p1.getId()){
 						case R.id.reboot:effect=Effectstype.Shake;break;
 					}
@@ -71,6 +72,8 @@ public class MainActivity extends AppCompatActivity
 							public void onClick(View v) {
 								new BackgroundThread(REBOOT_CMD).start();
 								tampilkanSnackbar(getString(R.string.reboot_message));
+								dialogBuilderP1.dismiss();
+								showRingProgressDialog();
 							}
 						})
 						.show();
@@ -87,7 +90,7 @@ public class MainActivity extends AppCompatActivity
 				public void onClick(View p2)
 				{
 					// TODO: Implement this method
-					NiftyDialogBuilder dialogBuilderP2=NiftyDialogBuilder.getInstance(MainActivity.this);
+					final NiftyDialogBuilder dialogBuilderP2=NiftyDialogBuilder.getInstance(MainActivity.this);
 					switch (p2.getId()){
 						case R.id.soft_reboot:effect=Effectstype.Shake;break;
 					}
@@ -109,6 +112,8 @@ public class MainActivity extends AppCompatActivity
 							public void onClick(View p2) {
 								new BackgroundThread(REBOOT_SOFT_REBOOT_CMD).start();
 								tampilkanSnackbar(getString(R.string.sf_reboot_message));
+								dialogBuilderP2.dismiss();
+								showRingProgressDialog();
 							}
 						})
 						.show();
@@ -122,7 +127,7 @@ public class MainActivity extends AppCompatActivity
 				public void onClick(View p3)
 				{
 					// TODO: Implement this method
-					NiftyDialogBuilder dialogBuilderP3=NiftyDialogBuilder.getInstance(MainActivity.this);
+					final NiftyDialogBuilder dialogBuilderP3=NiftyDialogBuilder.getInstance(MainActivity.this);
 					switch (p3.getId()){
 						case R.id.safe_mode:effect=Effectstype.Shake;break;
 					}
@@ -144,6 +149,8 @@ public class MainActivity extends AppCompatActivity
 							public void onClick(View p3) {
 								new BackgroundThread(REBOOT_SAFE_MODE).start();
 								tampilkanSnackbar(getString(R.string.sf_reboot_message));
+								dialogBuilderP3.dismiss();
+								showRingProgressDialog();
 							}
 						})
 						.show();
@@ -156,7 +163,7 @@ public class MainActivity extends AppCompatActivity
 				public void onClick(View p4)
 				{
 					// TODO: Implement this method
-					NiftyDialogBuilder dialogBuilderP4=NiftyDialogBuilder.getInstance(MainActivity.this);
+					final NiftyDialogBuilder dialogBuilderP4=NiftyDialogBuilder.getInstance(MainActivity.this);
 					switch (p4.getId()){
 						case R.id.bootloader:effect=Effectstype.Shake;break;
 					}
@@ -178,6 +185,8 @@ public class MainActivity extends AppCompatActivity
 							public void onClick(View p4) {
 								new BackgroundThread(REBOOT_BOOTLOADER_CMD).start();
 								tampilkanSnackbar(getString(R.string.recovery_message));
+								dialogBuilderP4.dismiss();
+								showRingProgressDialog();
 							}
 						})
 						.show();
@@ -189,7 +198,7 @@ public class MainActivity extends AppCompatActivity
 				@Override
 				public void onClick(View p5)
 				{
-					NiftyDialogBuilder dialogBuilderP5=NiftyDialogBuilder.getInstance(MainActivity.this);
+					final NiftyDialogBuilder dialogBuilderP5=NiftyDialogBuilder.getInstance(MainActivity.this);
 					switch (p5.getId()){
 						case R.id.recovery:effect=Effectstype.Shake;break;
 					}
@@ -211,6 +220,8 @@ public class MainActivity extends AppCompatActivity
 							public void onClick(View p5) {
 								new BackgroundThread(REBOOT_RECOVERY_CMD).start();
 								tampilkanSnackbar(getString(R.string.recovery_message));
+								dialogBuilderP5.dismiss();
+								showRingProgressDialog();
 							}
 						})
 						.show();
@@ -226,7 +237,7 @@ public class MainActivity extends AppCompatActivity
 				public void onClick(View p6)
 				{
 					// TODO: Implement this method
-					NiftyDialogBuilder dialogBuilderP6=NiftyDialogBuilder.getInstance(MainActivity.this);
+					final NiftyDialogBuilder dialogBuilderP6=NiftyDialogBuilder.getInstance(MainActivity.this);
 					switch (p6.getId()){
 						case R.id.shutdown:effect=Effectstype.Shake;break;
 					}
@@ -248,6 +259,8 @@ public class MainActivity extends AppCompatActivity
 							public void onClick(View p6) {
 								new BackgroundThread(SHUTDOWN).start();
 								tampilkanSnackbar(getString(R.string.shuut_down_message));
+								dialogBuilderP6.dismiss();
+								showRingProgressDialog();
 							}
 						})
 						.show();
@@ -262,7 +275,7 @@ public class MainActivity extends AppCompatActivity
 				public void onClick(View p7)
 				{
 					// TODO: Implement this method
-					NiftyDialogBuilder dialogBuilder=NiftyDialogBuilder.getInstance(MainActivity.this);
+					final NiftyDialogBuilder dialogBuilder=NiftyDialogBuilder.getInstance(MainActivity.this);
 					dialogBuilder
 						.withEffect(effect=Effectstype.RotateBottom)
 						.withTitle(getString(R.string.app_about))
@@ -281,7 +294,7 @@ public class MainActivity extends AppCompatActivity
 							@Override
 							public void onClick(View v) {
 
-								finish();
+								dialogBuilder.dismiss();
 								
 
 							}
@@ -312,6 +325,11 @@ public class MainActivity extends AppCompatActivity
 				}
 			}).start();
     }
+	
+	private void showRingProgressDialog(){
+        final ProgressDialog ringProgressDialog = ProgressDialog.show(MainActivity.this, "Rebooting", "Please wait ...", true);
+        ringProgressDialog.setCancelable(false);
+	}
 
 	private static void setThreadPrio(int prio) {
         android.os.Process.setThreadPriority(prio);

@@ -8,8 +8,8 @@ android {
         applicationId "in.ds.android.clickboot"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 3
-        versionName "2.0"
+        versionCode 4
+        versionName "4.0"
     }
     buildTypes {
         release {
@@ -20,7 +20,7 @@ android {
 }
 
 dependencies {
-	compile project('/external_sd/AppProject/.NiftyDialogEffects/library')
+	compile project(':app:library')
 	compile 'eu.chainfire:libsuperuser:1.0.0.+'
 	compile 'com.android.support:design:+'
 	compile 'com.android.support:appcompat-v7:+'
