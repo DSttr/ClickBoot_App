@@ -9,8 +9,6 @@
 	android:orientation="vertical"
 	android:gravity="center">
 
-	
-
 	<android.support.design.widget.CoordinatorLayout
 		android:id="@+id/content"
 		android:layout_width="match_parent"
@@ -23,34 +21,33 @@
 			android:layout_width="match_parent"
 			android:orientation="vertical"
 			android:gravity="top">
-			
+
 			<android.support.design.widget.AppBarLayout
 				android:id="@+id/appBarLayout"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:background="@color/primary"
 				android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-				
 
-			<ImageView
-				android:layout_height="wrap_content"
-				android:layout_width="wrap_content"
-				android:src="@drawable/ic_launcher"
-				android:id="@+id/imageClick"
-				android:layout_margin="10dp"
-				android:layout_gravity="center"
-				android:gravity="center"/>
+				<ImageView
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:src="@drawable/ic_launcher"
+					android:id="@+id/imageClick"
+					android:layout_margin="10dp"
+					android:layout_gravity="center"
+					android:gravity="center"/>
 
-			<TextView
-				android:layout_height="wrap_content"
-				android:layout_width="match_parent"
-				android:textSize="20sp"
-				android:layout_margin="5dp"
-				android:textStyle="bold"
-				android:textAllCaps="true"
-				android:text="@string/app_name"
-				android:gravity="center"/>
-			
+				<TextView
+					android:layout_height="wrap_content"
+					android:layout_width="match_parent"
+					android:textSize="20sp"
+					android:layout_margin="5dp"
+					android:textStyle="bold"
+					android:textAllCaps="true"
+					android:text="@string/app_name"
+					android:gravity="center"/>
+
 			</android.support.design.widget.AppBarLayout>
 
 			<LinearLayout
@@ -75,7 +72,6 @@
 						<android.support.design.widget.FloatingActionButton
 							android:layout_height="wrap_content"
 							android:layout_width="wrap_content"
-							
 							android:src="@drawable/ic_reboot_alpha"
 							app:borderWidth="0dp"
 							app:elevation="4dp"
@@ -111,7 +107,6 @@
 						<android.support.design.widget.FloatingActionButton
 							android:layout_height="wrap_content"
 							android:layout_width="wrap_content"
-							
 							android:src="@drawable/soft_reboot"
 							app:borderWidth="0dp"
 							app:elevation="4dp"
@@ -130,7 +125,7 @@
 							android:layout_margin="5dp"/>
 
 					</LinearLayout>
-					
+
 					<View
 						android:background="?android:attr/dividerVertical"
 						android:layout_height="2dp"
@@ -182,7 +177,6 @@
 						<android.support.design.widget.FloatingActionButton
 							android:layout_height="wrap_content"
 							android:layout_width="wrap_content"
-							
 							android:src="@drawable/boot_recovery"
 							app:borderWidth="0dp"
 							app:elevation="4dp"
@@ -208,7 +202,7 @@
 						android:layout_width="match_parent"
 						android:layout_marginRight="10dp"
 						android:layout_marginLeft="10dp"/>
-					
+
 					<LinearLayout
 						android:layout_height="50dp"
 						android:layout_width="match_parent"
@@ -253,7 +247,6 @@
 						<android.support.design.widget.FloatingActionButton
 							android:layout_height="wrap_content"
 							android:layout_width="wrap_content"
-							
 							android:src="@drawable/ic_shutdown"
 							app:borderWidth="0dp"
 							app:elevation="4dp"

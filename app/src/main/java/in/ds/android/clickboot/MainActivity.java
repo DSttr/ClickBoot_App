@@ -1,5 +1,7 @@
 package in.ds.android.clickboot;
 
+
+import android.app.*;
 import android.os.*;
 import android.support.design.widget.*;
 import android.support.v7.app.*;
@@ -10,7 +12,6 @@ import eu.chainfire.libsuperuser.*;
 import in.ds.android.clickboot.*;
 
 import in.ds.android.clickboot.R;
-import android.app.*;
 
 public class MainActivity extends AppCompatActivity 
 {
@@ -66,7 +67,6 @@ public class MainActivity extends AppCompatActivity
 						.withDuration(RUNNABLE_DELAY_MS)
 						.withEffect(effect)
 						.withButton1Text("OK")
-						//.setCustomView(R.layout.custom_view,v.getContext())
 						.setButton1Click(new View.OnClickListener() {
 							@Override
 							public void onClick(View v) {
@@ -281,7 +281,7 @@ public class MainActivity extends AppCompatActivity
 						.withTitle(getString(R.string.app_about))
 						.withTitleColor("#FFFFFF")
 						.withDividerColor("#11000000")
-						.withMessage("App Version : 3.0 \n\nCREDITS :\n\nnaman14 - Material Power Button \nChainfire - SuperUser library \nLiTao : NitfiDialog Efect ")                     //.withMessage(null)  no Msg
+						.withMessage("App Version : 4.0 \n\nCREDITS :\n\nnaman14 - Material Power Button \nChainfire - SuperUser library \nLiTao - NitfiDialog Efect ")                     //.withMessage(null)  no Msg
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
 						.withIcon(getResources().getDrawable(R.drawable.ic_launcher))
@@ -289,7 +289,6 @@ public class MainActivity extends AppCompatActivity
 						.withDuration(RUNNABLE_DELAY_MS)
 						.withEffect(effect)
 						.withButton1Text("OK")
-						//.setCustomView(R.layout.custom_view,v.getContext())
 						.setButton1Click(new View.OnClickListener() {
 							@Override
 							public void onClick(View v) {

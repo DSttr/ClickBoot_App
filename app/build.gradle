@@ -21,7 +21,7 @@ android {
 
 dependencies {
 	compile project(':app:library')
-	compile 'eu.chainfire:libsuperuser:1.0.0.+'
+	compile 'eu.chainfire:libsuperuser:+'
 	compile 'com.android.support:design:+'
 	compile 'com.android.support:appcompat-v7:+'
     compile fileTree(dir: 'libs', include: ['*.jar'])

@@ -20,8 +20,6 @@
 	<string name="bootloader_message">BOOT IN TO RECOVERY PLEASE WAIT</string>
 	<string name="shut_down_text">SHUTDOWN</string>
 	<string name="shuut_down_message">SHUTING DOWN PLEASE WAIT</string>
-	<string name="service_message">SystemOverlay Service started</string>
-	<string name="service_dismise_message">SystemOverlay Service will be dismised</string>
 	<string name="confirm">Are you sure ?</string>
 
 </resources>
