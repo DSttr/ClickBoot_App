@@ -2,12 +2,14 @@
 #
 #
 #### FEATURES
+
   - Normal Reboot
   - Soft reboot Simply restart the android UI by Killing zygote process
   - Safe Mode automatic write buil.prop "setprop persist.sys.safemode 1" !!Not Recomended!!
   - Recovery mode
   - Fastboot mode
   - Power Off
+
 #
 
 #### SCREENSHOT
@@ -18,6 +20,11 @@
 #### DOWNLOAD
 
 https://github.com/DSttr/ClickBoot_App/releases
+
+#### Developed by
+
+  - Diki Satria - <dikisatria10@gmail.com>
+  - [FACEBOOK](https://m.facebook.com/resyha.gatha1/about?refid=17)
     
 #### Licence
 Copyright 2016 Diki Satria<br />
