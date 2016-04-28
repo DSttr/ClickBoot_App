@@ -17,13 +17,17 @@ public class MainActivity extends AppCompatActivity
 {
 	public static final String SHUTDOWN_BROADCAST
 	= "am broadcast android.intent.action.ACTION_SHUTDOWN";
-	public static final int RUNNABLE_DELAY_MS = 500;
+	public static final int RUNNABLE_DELAY_MS = 1000;
+	public static final int ANIMATION_DURATION = 500;
 	public static final String REBOOT_RECOVERY_CMD = "reboot recovery";
 	public static final String SHUTDOWN = "reboot -p";
     public static final String REBOOT_CMD = "reboot";
     public static final String REBOOT_SOFT_REBOOT_CMD = "setprop ctl.restart zygote";
 	private static final String REBOOT_BOOTLOADER_CMD = "reboot bootloader";
-    private static final String[] REBOOT_SAFE_MODE = new String[]{"setprop persist.sys.safemode 1", REBOOT_SOFT_REBOOT_CMD};
+    private static final String[] REBOOT_SAFE_MODE = new String[] {
+		"setprop persist.sys.safemode 1",
+		REBOOT_SOFT_REBOOT_CMD
+	};
 	public static final int BG_PRIO = android.os.Process.THREAD_PRIORITY_BACKGROUND;
 	private static final int ROOT_STATUS = R.string.root_status;
 
@@ -63,10 +67,11 @@ public class MainActivity extends AppCompatActivity
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
 						.withIcon(getResources().getDrawable(R.drawable.ic_reboot_alpha))
-						.isCancelableOnTouchOutside(true)
-						.withDuration(RUNNABLE_DELAY_MS)
+						.isCancelableOnTouchOutside(false)
+						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
-						.withButton1Text("OK")
+						.withButton2Text(getString(android.R.string.cancel))
+						.withButton1Text(getString(android.R.string.ok))
 						.setButton1Click(new View.OnClickListener() {
 							@Override
 							public void onClick(View v) {
@@ -75,6 +80,17 @@ public class MainActivity extends AppCompatActivity
 								dialogBuilderP1.dismiss();
 								showRingProgressDialog();
 							}
+						})
+						.setButton2Click(new View.OnClickListener(){
+
+							@Override
+							public void onClick(View p1)
+							{
+								// TODO: Implement this method
+								dialogBuilderP1.dismiss();
+							}
+
+							
 						})
 						.show();
 					
@@ -103,10 +119,11 @@ public class MainActivity extends AppCompatActivity
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
 						.withIcon(getResources().getDrawable(R.drawable.soft_reboot))
-						.isCancelableOnTouchOutside(true)
-						.withDuration(RUNNABLE_DELAY_MS)
+						.isCancelableOnTouchOutside(false)
+						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
-						.withButton1Text("OK")
+						.withButton2Text(getString(android.R.string.cancel))
+						.withButton1Text(getString(android.R.string.ok))
 						.setButton1Click(new View.OnClickListener() {
 							@Override
 							public void onClick(View p2) {
@@ -114,6 +131,15 @@ public class MainActivity extends AppCompatActivity
 								tampilkanSnackbar(getString(R.string.sf_reboot_message));
 								dialogBuilderP2.dismiss();
 								showRingProgressDialog();
+							}
+						})
+						.setButton2Click(new View.OnClickListener(){
+
+							@Override
+							public void onClick(View p1)
+							{
+								// TODO: Implement this method
+								dialogBuilderP2.dismiss();
 							}
 						})
 						.show();
@@ -140,10 +166,11 @@ public class MainActivity extends AppCompatActivity
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
 						.withIcon(getResources().getDrawable(R.drawable.soft_reboot))
-						.isCancelableOnTouchOutside(true)
-						.withDuration(RUNNABLE_DELAY_MS)
+						.isCancelableOnTouchOutside(false)
+						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
-						.withButton1Text("OK")
+						.withButton2Text(getString(android.R.string.cancel))
+						.withButton1Text(getString(android.R.string.ok))
 						.setButton1Click(new View.OnClickListener() {
 							@Override
 							public void onClick(View p3) {
@@ -151,6 +178,15 @@ public class MainActivity extends AppCompatActivity
 								tampilkanSnackbar(getString(R.string.sf_reboot_message));
 								dialogBuilderP3.dismiss();
 								showRingProgressDialog();
+							}
+						})
+						.setButton2Click(new View.OnClickListener(){
+
+							@Override
+							public void onClick(View p1)
+							{
+								// TODO: Implement this method
+								dialogBuilderP3.dismiss();
 							}
 						})
 						.show();
@@ -176,10 +212,11 @@ public class MainActivity extends AppCompatActivity
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
 						.withIcon(getResources().getDrawable(R.drawable.ic_shutdown))
-						.isCancelableOnTouchOutside(true)
-						.withDuration(RUNNABLE_DELAY_MS)
+						.isCancelableOnTouchOutside(false)
+						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
-						.withButton1Text("OK")
+						.withButton2Text(getString(android.R.string.cancel))
+						.withButton1Text(getString(android.R.string.ok))
 						.setButton1Click(new View.OnClickListener() {
 							@Override
 							public void onClick(View p4) {
@@ -187,6 +224,15 @@ public class MainActivity extends AppCompatActivity
 								tampilkanSnackbar(getString(R.string.recovery_message));
 								dialogBuilderP4.dismiss();
 								showRingProgressDialog();
+							}
+						})
+						.setButton2Click(new View.OnClickListener(){
+
+							@Override
+							public void onClick(View p1)
+							{
+								// TODO: Implement this method
+								dialogBuilderP4.dismiss();
 							}
 						})
 						.show();
@@ -211,10 +257,11 @@ public class MainActivity extends AppCompatActivity
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
 						.withIcon(getResources().getDrawable(R.drawable.boot_recovery))
-						.isCancelableOnTouchOutside(true)
-						.withDuration(RUNNABLE_DELAY_MS)
+						.isCancelableOnTouchOutside(false)
+						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
-						.withButton1Text("OK")
+						.withButton2Text(getString(android.R.string.cancel))
+						.withButton1Text(getString(android.R.string.ok))
 						.setButton1Click(new View.OnClickListener() {
 							@Override
 							public void onClick(View p5) {
@@ -222,6 +269,15 @@ public class MainActivity extends AppCompatActivity
 								tampilkanSnackbar(getString(R.string.recovery_message));
 								dialogBuilderP5.dismiss();
 								showRingProgressDialog();
+							}
+						})
+						.setButton2Click(new View.OnClickListener(){
+
+							@Override
+							public void onClick(View p1)
+							{
+								// TODO: Implement this method
+								dialogBuilderP5.dismiss();
 							}
 						})
 						.show();
@@ -250,10 +306,11 @@ public class MainActivity extends AppCompatActivity
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
 						.withIcon(getResources().getDrawable(R.drawable.ic_shutdown))
-						.isCancelableOnTouchOutside(true)
-						.withDuration(RUNNABLE_DELAY_MS)
+						.isCancelableOnTouchOutside(false)
+						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
-						.withButton1Text("OK")
+						.withButton2Text(getString(android.R.string.cancel))
+						.withButton1Text(getString(android.R.string.ok))
 						.setButton1Click(new View.OnClickListener() {
 							@Override
 							public void onClick(View p6) {
@@ -261,6 +318,15 @@ public class MainActivity extends AppCompatActivity
 								tampilkanSnackbar(getString(R.string.shuut_down_message));
 								dialogBuilderP6.dismiss();
 								showRingProgressDialog();
+							}
+						})
+						.setButton2Click(new View.OnClickListener(){
+
+							@Override
+							public void onClick(View p1)
+							{
+								// TODO: Implement this method
+								dialogBuilderP6.dismiss();
 							}
 						})
 						.show();
@@ -281,14 +347,14 @@ public class MainActivity extends AppCompatActivity
 						.withTitle(getString(R.string.app_about))
 						.withTitleColor("#FFFFFF")
 						.withDividerColor("#11000000")
-						.withMessage("App Version : 4.0 \n\nCREDITS :\n\nnaman14 - Material Power Button \nChainfire - SuperUser library \nLiTao - NitfiDialog Efect ")                     //.withMessage(null)  no Msg
+						.withMessage("Copyright DSttr™ 2016 \n\n\n\nApp Version : 5.0 \n\nCREDITS :\n\nnaman14 - Material Power Button \nChainfire - SuperUser library \nLiTao - NitfiDialog Efect ")
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
 						.withIcon(getResources().getDrawable(R.drawable.ic_launcher))
-						.isCancelableOnTouchOutside(true)
-						.withDuration(RUNNABLE_DELAY_MS)
+						.isCancelableOnTouchOutside(false)
+						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
-						.withButton1Text("OK")
+						.withButton1Text(getString(android.R.string.ok))
 						.setButton1Click(new View.OnClickListener() {
 							@Override
 							public void onClick(View v) {
@@ -326,7 +392,7 @@ public class MainActivity extends AppCompatActivity
     }
 	
 	private void showRingProgressDialog(){
-        final ProgressDialog ringProgressDialog = ProgressDialog.show(MainActivity.this, "Rebooting", "Please wait ...", true);
+        final ProgressDialog ringProgressDialog = ProgressDialog.show(MainActivity.this, "Memulai....", "Tunggu beberapa saat.");
         ringProgressDialog.setCancelable(false);
 	}
 
