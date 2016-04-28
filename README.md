@@ -9,14 +9,17 @@
   - Fastboot mode
   - Power Off
 #
-####SCREENSHOT
+
+#### SCREENSHOT
+
 ![Image](https://raw.githubusercontent.com/DSttr/ClickBoot_App/master/screenshot/Screenshot_20160428-141650.png)
 ![Image](https://raw.githubusercontent.com/DSttr/ClickBoot_App/master/screenshot/Screenshot_20160428-141656.png)
 
-####DOWNLOAD
-    https://github.com/DSttr/ClickBoot_App/releases
+#### DOWNLOAD
+
+https://github.com/DSttr/ClickBoot_App/releases
     
-####Licence
+#### Licence
 Copyright 2016 Diki Satria<br />
 <br />
 Licensed under the Apache License, Version 2.0 (the "License");<br />
