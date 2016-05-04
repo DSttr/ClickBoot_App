@@ -2,6 +2,7 @@ package in.ds.android.clickboot;
 
 
 import android.app.*;
+import android.graphics.*;
 import android.os.*;
 import android.support.design.widget.*;
 import android.support.v7.app.*;
@@ -31,10 +32,12 @@ public class MainActivity extends AppCompatActivity
 	public static final int BG_PRIO = android.os.Process.THREAD_PRIORITY_BACKGROUND;
 	private static final int ROOT_STATUS = R.string.root_status;
 
-	private FloatingActionButton mReboot, mSoftReboot, mRecovery, mShutdown, mServices, mSafeMode, mBootLoader;
+	private LinearLayout mReboot, mSoftReboot, mRecovery, mShutdown, mSafeMode, mBootLoader;
+	private FloatingActionButton mServices;
 	private CoordinatorLayout mCoordinatorLayout;
 	private TextView mTv;
 	private Effectstype effect;
+	private TextDrawable drawable1, drawable2, drawable3, drawable4, drawable5, drawable6;
 
 	
     @Override
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity
 		mCoordinatorLayout = (CoordinatorLayout)findViewById(R.id.content);
 		
 
-		mReboot = (FloatingActionButton)findViewById(R.id.reboot);
+		mReboot = (LinearLayout)findViewById(R.id.reboot);
 		mReboot.setOnClickListener(new View.OnClickListener(){
 
 				@Override
@@ -66,7 +69,6 @@ public class MainActivity extends AppCompatActivity
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
-						.withIcon(getResources().getDrawable(R.drawable.ic_reboot_alpha))
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -99,7 +101,7 @@ public class MainActivity extends AppCompatActivity
 
 
 			});
-		mSoftReboot = (FloatingActionButton)findViewById(R.id.soft_reboot);
+		mSoftReboot = (LinearLayout)findViewById(R.id.soft_reboot);
 		mSoftReboot.setOnClickListener(new View.OnClickListener(){
 
 				@Override
@@ -118,7 +120,6 @@ public class MainActivity extends AppCompatActivity
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
-						.withIcon(getResources().getDrawable(R.drawable.soft_reboot))
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -146,12 +147,15 @@ public class MainActivity extends AppCompatActivity
 					
 				}
 			});
-		mSafeMode = (FloatingActionButton)findViewById(R.id.safe_mode);
+		mSafeMode = (LinearLayout)findViewById(R.id.safe_mode);
 		mSafeMode.setOnClickListener(new View.OnClickListener(){
 
 				@Override
 				public void onClick(View p3)
 				{
+					tampilkanSnackbar("Safe Mode are disabled");
+					
+					/* Safe Mode Are disabled
 					// TODO: Implement this method
 					final NiftyDialogBuilder dialogBuilderP3=NiftyDialogBuilder.getInstance(MainActivity.this);
 					switch (p3.getId()){
@@ -165,7 +169,6 @@ public class MainActivity extends AppCompatActivity
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
-						.withIcon(getResources().getDrawable(R.drawable.soft_reboot))
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -174,10 +177,10 @@ public class MainActivity extends AppCompatActivity
 						.setButton1Click(new View.OnClickListener() {
 							@Override
 							public void onClick(View p3) {
-								new BackgroundThread(REBOOT_SAFE_MODE).start();
-								tampilkanSnackbar(getString(R.string.sf_reboot_message));
+								//new BackgroundThread(REBOOT_SAFE_MODE).start();
+								tampilkanSnackbar("Safe Mode are disabled");
 								dialogBuilderP3.dismiss();
-								showRingProgressDialog();
+								//showRingProgressDialog();
 							}
 						})
 						.setButton2Click(new View.OnClickListener(){
@@ -189,10 +192,10 @@ public class MainActivity extends AppCompatActivity
 								dialogBuilderP3.dismiss();
 							}
 						})
-						.show();
+						.show(); */
 				}
 			});
-		mBootLoader = (FloatingActionButton)findViewById(R.id.bootloader);
+		mBootLoader = (LinearLayout)findViewById(R.id.bootloader);
 		mBootLoader.setOnClickListener(new View.OnClickListener(){
 
 				@Override
@@ -211,7 +214,6 @@ public class MainActivity extends AppCompatActivity
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
-						.withIcon(getResources().getDrawable(R.drawable.ic_shutdown))
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -238,7 +240,7 @@ public class MainActivity extends AppCompatActivity
 						.show();
 				}
 			});
-		mRecovery = (FloatingActionButton)findViewById(R.id.recovery);
+		mRecovery = (LinearLayout)findViewById(R.id.recovery);
 		mRecovery.setOnClickListener(new View.OnClickListener(){
 
 				@Override
@@ -256,7 +258,6 @@ public class MainActivity extends AppCompatActivity
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
-						.withIcon(getResources().getDrawable(R.drawable.boot_recovery))
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -286,7 +287,7 @@ public class MainActivity extends AppCompatActivity
 
 			});
 
-		mShutdown = (FloatingActionButton)findViewById(R.id.shutdown);
+		mShutdown = (LinearLayout)findViewById(R.id.shutdown);
 		mShutdown.setOnClickListener(new View.OnClickListener(){
 
 				@Override
@@ -305,7 +306,6 @@ public class MainActivity extends AppCompatActivity
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
 						.withDialogColor("#1E88E5")
-						.withIcon(getResources().getDrawable(R.drawable.ic_shutdown))
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -389,6 +389,25 @@ public class MainActivity extends AppCompatActivity
 					}
 				}
 			}).start();
+			
+		drawable1 = TextDrawable.builder()
+			.buildRound("R", getColor(R.color.colorAccent));
+        ((ImageView)findViewById(R.id.ireboot)).setImageDrawable(drawable1);
+		drawable2 = TextDrawable.builder()
+			.buildRound("S", getColor(R.color.colorAccent));
+        ((ImageView)findViewById(R.id.isoft_reboot)).setImageDrawable(drawable2);
+		drawable3 = TextDrawable.builder()
+			.buildRound("S", getColor(R.color.colorAccent));
+        ((ImageView)findViewById(R.id.isafe_reboot)).setImageDrawable(drawable3);
+	    drawable4 = TextDrawable.builder()
+			.buildRound("R", getColor(R.color.colorAccent));
+        ((ImageView)findViewById(R.id.irecover_reboot)).setImageDrawable(drawable4);
+		drawable5 = TextDrawable.builder()
+			.buildRound("B", getColor(R.color.colorAccent));
+        ((ImageView)findViewById(R.id.ibootloader_reboot)).setImageDrawable(drawable5);
+		drawable6 = TextDrawable.builder()
+			.buildRound("P", getColor(R.color.colorAccent));
+        ((ImageView)findViewById(R.id.ishutdown_reboot)).setImageDrawable(drawable6);
     }
 	
 	private void showRingProgressDialog(){

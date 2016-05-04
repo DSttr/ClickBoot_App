@@ -64,20 +64,19 @@
 					android:layout_weight="1.0">
 
 					<LinearLayout
-						android:layout_height="50dp"
+						android:layout_height="wrap_content"
 						android:layout_width="match_parent"
 						android:orientation="horizontal"
-						android:layout_margin="5dp">
+						android:id="@+id/reboot"
+						android:background="?android:attr/selectableItemBackground"
+						android:clickable="true"
+						android:padding="4dp">
 
-						<android.support.design.widget.FloatingActionButton
-							android:layout_height="wrap_content"
-							android:layout_width="wrap_content"
-							android:src="@drawable/ic_reboot_alpha"
-							app:borderWidth="0dp"
-							app:elevation="4dp"
-							app:pressedTranslationZ="12dp"
-							android:id="@+id/reboot"
-							android:layout_gravity="center"/>
+						<ImageView
+							android:id="@+id/ireboot"
+							android:layout_width="45dp"
+							android:layout_height="45dp"
+							android:layout_margin="2dp"/>
 
 						<TextView
 							android:layout_height="wrap_content"
@@ -99,20 +98,19 @@
 						android:layout_marginLeft="10dp"/>
 
 					<LinearLayout
-						android:layout_height="50dp"
+						android:layout_height="wrap_content"
 						android:layout_width="match_parent"
 						android:orientation="horizontal"
-						android:layout_margin="5dp">
+						android:id="@+id/soft_reboot"
+						android:background="?android:attr/selectableItemBackground"
+						android:clickable="true"
+						android:padding="4dp">
 
-						<android.support.design.widget.FloatingActionButton
-							android:layout_height="wrap_content"
-							android:layout_width="wrap_content"
-							android:src="@drawable/soft_reboot"
-							app:borderWidth="0dp"
-							app:elevation="4dp"
-							app:pressedTranslationZ="12dp"
-							android:id="@+id/soft_reboot"
-							android:layout_gravity="center"/>
+						<ImageView
+							android:id="@+id/isoft_reboot"
+							android:layout_width="45dp"
+							android:layout_height="45dp"
+							android:layout_margin="2dp"/>
 
 						<TextView
 							android:layout_height="wrap_content"
@@ -134,20 +132,19 @@
 						android:layout_marginLeft="10dp"/>
 
 					<LinearLayout
-						android:layout_height="50dp"
+						android:layout_height="wrap_content"
 						android:layout_width="match_parent"
 						android:orientation="horizontal"
-						android:layout_margin="5dp">
+						android:id="@+id/safe_mode"
+						android:background="?android:attr/selectableItemBackground"
+						android:clickable="true"
+						android:padding="4dp">
 
-						<android.support.design.widget.FloatingActionButton
-							android:layout_height="wrap_content"
-							android:layout_width="wrap_content"
-							android:src="@drawable/ic_shutdown"
-							app:borderWidth="0dp"
-							app:elevation="4dp"
-							app:pressedTranslationZ="12dp"
-							android:id="@+id/safe_mode"
-							android:layout_gravity="center"/>
+						<ImageView
+							android:id="@+id/isafe_reboot"
+							android:layout_width="45dp"
+							android:layout_height="45dp"
+							android:layout_margin="2dp"/>
 
 						<TextView
 							android:layout_height="wrap_content"
@@ -169,20 +166,19 @@
 						android:layout_marginLeft="10dp"/>
 
 					<LinearLayout
-						android:layout_height="50dp"
+						android:layout_height="wrap_content"
 						android:layout_width="match_parent"
 						android:orientation="horizontal"
-						android:layout_margin="5dp">
+						android:id="@+id/recovery"
+						android:background="?android:attr/selectableItemBackground"
+						android:clickable="true"
+						android:padding="4dp">
 
-						<android.support.design.widget.FloatingActionButton
-							android:layout_height="wrap_content"
-							android:layout_width="wrap_content"
-							android:src="@drawable/boot_recovery"
-							app:borderWidth="0dp"
-							app:elevation="4dp"
-							app:pressedTranslationZ="12dp"
-							android:id="@+id/recovery"
-							android:layout_gravity="center"/>
+						<ImageView
+							android:id="@+id/irecover_reboot"
+							android:layout_width="45dp"
+							android:layout_height="45dp"
+							android:layout_margin="2dp"/>
 
 						<TextView
 							android:layout_height="wrap_content"
@@ -204,20 +200,19 @@
 						android:layout_marginLeft="10dp"/>
 
 					<LinearLayout
-						android:layout_height="50dp"
+						android:layout_height="wrap_content"
 						android:layout_width="match_parent"
 						android:orientation="horizontal"
-						android:layout_margin="5dp">
+						android:id="@+id/bootloader"
+						android:background="?android:attr/selectableItemBackground"
+						android:clickable="true"
+						android:padding="4dp">
 
-						<android.support.design.widget.FloatingActionButton
-							android:layout_height="wrap_content"
-							android:layout_width="wrap_content"
-							android:src="@drawable/ic_shutdown"
-							app:borderWidth="0dp"
-							app:elevation="4dp"
-							app:pressedTranslationZ="12dp"
-							android:id="@+id/bootloader"
-							android:layout_gravity="center"/>
+						<ImageView
+							android:id="@+id/ibootloader_reboot"
+							android:layout_width="45dp"
+							android:layout_height="45dp"
+							android:layout_margin="2dp"/>
 
 						<TextView
 							android:layout_height="wrap_content"
@@ -239,20 +234,19 @@
 						android:layout_marginLeft="10dp"/>
 
 					<LinearLayout
-						android:layout_height="50dp"
+						android:layout_height="wrap_content"
 						android:layout_width="match_parent"
 						android:orientation="horizontal"
-						android:layout_margin="5dp">
+						android:id="@+id/shutdown"
+						android:background="?android:attr/selectableItemBackground"
+						android:clickable="true"
+						android:padding="4dp">
 
-						<android.support.design.widget.FloatingActionButton
-							android:layout_height="wrap_content"
-							android:layout_width="wrap_content"
-							android:src="@drawable/ic_shutdown"
-							app:borderWidth="0dp"
-							app:elevation="4dp"
-							app:pressedTranslationZ="12dp"
-							android:id="@+id/shutdown"
-							android:layout_gravity="center"/>
+						<ImageView
+							android:id="@+id/ishutdown_reboot"
+							android:layout_width="45dp"
+							android:layout_height="45dp"
+							android:layout_margin="2dp"/>
 
 						<TextView
 							android:layout_height="wrap_content"
