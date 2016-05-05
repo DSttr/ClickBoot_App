@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.0"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "in.ds.android.clickboot"
-        minSdkVersion 15
+        applicationId "id.kido1611.clickboot"
+        minSdkVersion 16
         targetSdkVersion 23
-        versionCode 5
-        versionName "5.0"
+        versionCode 1
+        versionName "1.0"
     }
     buildTypes {
         release {
@@ -20,9 +20,13 @@ android {
 }
 
 dependencies {
-	compile project(':app:library')
-	compile 'eu.chainfire:libsuperuser:+'
-	compile 'com.android.support:design:+'
-	compile 'com.android.support:appcompat-v7:+'
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:design:23.3.0'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.android.support:cardview-v7:23.3.0'
+    compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+    compile 'com.github.sd6352051.niftydialogeffects:niftydialogeffects:1.0.0@aar'
+    compile 'eu.chainfire:libsuperuser:+'
 }

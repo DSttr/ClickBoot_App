@@ -1,22 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/window_background</item>
     </style>
-	<style name="Theme.ActionBar" parent="@android:style/Widget.Holo.ActionBar.Solid">
-		<item name="android:background">@color/colorAccent</item>
-		<item name="android:colorPrimary">@color/colorPrimary</item>		
-		<item name="android:textColor">#ffffffff</item>
-		<item name="android:icon">@android:color/transparent</item>
-		<item name="android:titleTextStyle">@style/TextAppearance.Holo.Widget.ActionBar.Title</item>	
-	</style>
-	<style name="TextAppearance.Holo.Widget.ActionBar.Title" parent="@*android:style/TextAppearance.Holo.Medium">
-        <item name="android:textSize">21.0sp</item>
-        <item name="android:textColor">#ffffffff</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textAllCaps">true</item>
+    <style name="AppCompatAlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="android:textColorPrimary">#000000</item>-->
+        <!--<item name="android:background">#FFFFFF</item>-->
     </style>
 </resources>
