@@ -5,7 +5,6 @@
 
   - Normal Reboot
   - Soft reboot Simply restart the android UI by Killing zygote process
-  - Safe Mode automatic write buil.prop "setprop persist.sys.safemode 1" !!Not Recomended!!
   - Recovery mode
   - Fastboot mode
   - Power Off
@@ -14,8 +13,8 @@
 
 #### SCREENSHOT
 
-![Image](https://raw.githubusercontent.com/DSttr/ClickBoot_App/master/screenshot/Screenshot_20160428-141650.png)
-![Image](https://raw.githubusercontent.com/DSttr/ClickBoot_App/master/screenshot/Screenshot_20160428-141656.png)
+![Image](https://raw.githubusercontent.com/DSttr/ClickBoot_App/CB-V6.0/screenshot/Screenshot_20160505-084917.png)
+![Image](https://raw.githubusercontent.com/DSttr/ClickBoot_App/CB-V6.0/screenshot/Screenshot_20160505-084924.png)
 
 #### DOWNLOAD
 
