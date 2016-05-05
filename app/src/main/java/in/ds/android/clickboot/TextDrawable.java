@@ -170,9 +170,9 @@ public class TextDrawable extends ShapeDrawable {
             width = -1;
             height = -1;
             shape = new RectShape();
-            font = Typeface.create("sans-serif-light", Typeface.BOLD);
+            font = Typeface.create("sans-serif-light", Typeface.NORMAL);
             fontSize = -1;
-            isBold = true;
+            isBold = false;
             toUpperCase = true;
         }
 

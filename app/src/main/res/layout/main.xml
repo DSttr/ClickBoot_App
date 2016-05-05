@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:card_view="http://schemas.android.com/apk/res-auto"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
+	xmlns:local="http://schemas.android.com/apk/res-auto"
 	android:layout_height="match_parent"
 	android:layout_width="match_parent"
 	android:id="@+id/layout_satu"
@@ -22,33 +24,14 @@
 			android:orientation="vertical"
 			android:gravity="top">
 
-			<android.support.design.widget.AppBarLayout
-				android:id="@+id/appBarLayout"
+			<android.support.v7.widget.Toolbar
+				android:id="@+id/toolbar"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:background="@color/colorPrimary"
-				android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-				<ImageView
-					android:layout_height="wrap_content"
-					android:layout_width="wrap_content"
-					android:src="@drawable/ic_launcher"
-					android:id="@+id/imageClick"
-					android:layout_margin="10dp"
-					android:layout_gravity="center"
-					android:gravity="center"/>
-
-				<TextView
-					android:layout_height="wrap_content"
-					android:layout_width="match_parent"
-					android:textSize="20sp"
-					android:layout_margin="5dp"
-					android:textStyle="bold"
-					android:textAllCaps="true"
-					android:text="@string/app_name"
-					android:gravity="center"/>
-
-			</android.support.design.widget.AppBarLayout>
+				android:minHeight="?attr/actionBarSize"
+				android:background="?attr/colorPrimary"
+				local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+				local:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
 			<LinearLayout
 				android:layout_height="wrap_content"
@@ -63,209 +46,228 @@
 					android:gravity="left"
 					android:layout_weight="1.0">
 
-					<LinearLayout
+					<android.support.v7.widget.CardView
+						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
-						android:layout_width="match_parent"
-						android:orientation="horizontal"
-						android:id="@+id/reboot"
-						android:background="?android:attr/selectableItemBackground"
-						android:clickable="true"
-						android:padding="4dp">
+						card_view:cardElevation="2dp"
+						card_view:cardUseCompatPadding="true"
+						card_view:cardCornerRadius="2dp"
+						android:id="@+id/cardview">
 
-						<ImageView
-							android:id="@+id/ireboot"
-							android:layout_width="45dp"
-							android:layout_height="45dp"
-							android:layout_margin="2dp"/>
-
-						<TextView
+						<LinearLayout
 							android:layout_height="wrap_content"
-							android:layout_width="wrap_content"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:text="@string/reboot_text"
-							android:gravity="center"
-							android:layout_gravity="center"
-							android:layout_margin="6dp"/>
+							android:layout_width="match_parent"
+							android:orientation="horizontal"
+							android:id="@+id/reboot"
+							android:background="?attr/selectableItemBackground"
+							android:clickable="true"
+							android:padding="4dp">
 
-					</LinearLayout>
+							<ImageView
+								android:id="@+id/ireboot"
+								android:layout_width="45dp"
+								android:layout_height="45dp"
+								android:layout_margin="2dp"/>
 
-					<View
-						android:background="?android:attr/dividerVertical"
-						android:layout_height="2dp"
+							<TextView
+								android:layout_height="wrap_content"
+								android:layout_width="wrap_content"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:text="@string/reboot_text"
+								android:gravity="center"
+								android:layout_gravity="center"
+								android:layout_margin="6dp"/>
+
+						</LinearLayout>
+
+					</android.support.v7.widget.CardView>
+
+					<android.support.v7.widget.CardView
 						android:layout_width="match_parent"
-						android:layout_marginRight="10dp"
-						android:layout_marginLeft="10dp"/>
-
-					<LinearLayout
 						android:layout_height="wrap_content"
-						android:layout_width="match_parent"
-						android:orientation="horizontal"
-						android:id="@+id/soft_reboot"
-						android:background="?android:attr/selectableItemBackground"
-						android:clickable="true"
-						android:padding="4dp">
+						card_view:cardElevation="2dp"
+						card_view:cardUseCompatPadding="true"
+						card_view:cardCornerRadius="2dp"
+						android:id="@+id/cardview">
 
-						<ImageView
-							android:id="@+id/isoft_reboot"
-							android:layout_width="45dp"
-							android:layout_height="45dp"
-							android:layout_margin="2dp"/>
-
-						<TextView
+						<LinearLayout
 							android:layout_height="wrap_content"
-							android:layout_width="wrap_content"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:text="@string/sf_reboot_text"
-							android:gravity="center"
-							android:layout_gravity="center"
-							android:layout_margin="5dp"/>
+							android:layout_width="match_parent"
+							android:orientation="horizontal"
+							android:id="@+id/soft_reboot"
+							android:background="?android:attr/selectableItemBackground"
+							android:clickable="true"
+							android:padding="4dp">
 
-					</LinearLayout>
+							<ImageView
+								android:id="@+id/isoft_reboot"
+								android:layout_width="45dp"
+								android:layout_height="45dp"
+								android:layout_margin="2dp"/>
 
-					<View
-						android:background="?android:attr/dividerVertical"
-						android:layout_height="2dp"
+							<TextView
+								android:layout_height="wrap_content"
+								android:layout_width="wrap_content"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:text="@string/sf_reboot_text"
+								android:gravity="center"
+								android:layout_gravity="center"
+								android:layout_margin="5dp"/>
+
+						</LinearLayout>
+
+					</android.support.v7.widget.CardView>
+
+					<android.support.v7.widget.CardView
 						android:layout_width="match_parent"
-						android:layout_marginRight="10dp"
-						android:layout_marginLeft="10dp"/>
-
-					<LinearLayout
 						android:layout_height="wrap_content"
-						android:layout_width="match_parent"
-						android:orientation="horizontal"
-						android:id="@+id/safe_mode"
-						android:background="?android:attr/selectableItemBackground"
-						android:clickable="true"
-						android:padding="4dp">
+						card_view:cardElevation="2dp"
+						card_view:cardUseCompatPadding="true"
+						card_view:cardCornerRadius="2dp"
+						android:id="@+id/cardview"
+						android:visibility="gone">
 
-						<ImageView
-							android:id="@+id/isafe_reboot"
-							android:layout_width="45dp"
-							android:layout_height="45dp"
-							android:layout_margin="2dp"/>
-
-						<TextView
+						<LinearLayout
 							android:layout_height="wrap_content"
-							android:layout_width="wrap_content"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:text="@string/safe_mode_text"
-							android:gravity="center"
-							android:layout_gravity="center"
-							android:layout_margin="5dp"/>
+							android:layout_width="match_parent"
+							android:orientation="horizontal"
+							android:id="@+id/safe_mode"
+							android:background="?android:attr/selectableItemBackground"
+							android:clickable="true"
+							android:padding="4dp">
 
-					</LinearLayout>
+							<ImageView
+								android:id="@+id/isafe_reboot"
+								android:layout_width="45dp"
+								android:layout_height="45dp"
+								android:layout_margin="2dp"/>
 
-					<View
-						android:background="?android:attr/dividerVertical"
-						android:layout_height="2dp"
+							<TextView
+								android:layout_height="wrap_content"
+								android:layout_width="wrap_content"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:text="@string/safe_mode_text"
+								android:gravity="center"
+								android:layout_gravity="center"
+								android:layout_margin="5dp"/>
+
+						</LinearLayout>
+
+					</android.support.v7.widget.CardView>
+
+					<android.support.v7.widget.CardView
 						android:layout_width="match_parent"
-						android:layout_marginRight="10dp"
-						android:layout_marginLeft="10dp"/>
-
-					<LinearLayout
 						android:layout_height="wrap_content"
-						android:layout_width="match_parent"
-						android:orientation="horizontal"
-						android:id="@+id/recovery"
-						android:background="?android:attr/selectableItemBackground"
-						android:clickable="true"
-						android:padding="4dp">
+						card_view:cardElevation="2dp"
+						card_view:cardUseCompatPadding="true"
+						card_view:cardCornerRadius="2dp"
+						android:id="@+id/cardview">
 
-						<ImageView
-							android:id="@+id/irecover_reboot"
-							android:layout_width="45dp"
-							android:layout_height="45dp"
-							android:layout_margin="2dp"/>
-
-						<TextView
+						<LinearLayout
 							android:layout_height="wrap_content"
-							android:layout_width="wrap_content"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:text="@string/recovery_text"
-							android:gravity="center"
-							android:layout_gravity="center"
-							android:layout_margin="5dp"/>
+							android:layout_width="match_parent"
+							android:orientation="horizontal"
+							android:id="@+id/recovery"
+							android:background="?android:attr/selectableItemBackground"
+							android:clickable="true"
+							android:padding="4dp">
 
-					</LinearLayout>
+							<ImageView
+								android:id="@+id/irecover_reboot"
+								android:layout_width="45dp"
+								android:layout_height="45dp"
+								android:layout_margin="2dp"/>
 
-					<View
-						android:background="?android:attr/dividerVertical"
-						android:layout_height="2dp"
+							<TextView
+								android:layout_height="wrap_content"
+								android:layout_width="wrap_content"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:text="@string/recovery_text"
+								android:gravity="center"
+								android:layout_gravity="center"
+								android:layout_margin="5dp"/>
+
+						</LinearLayout>
+
+					</android.support.v7.widget.CardView>
+
+					<android.support.v7.widget.CardView
 						android:layout_width="match_parent"
-						android:layout_marginRight="10dp"
-						android:layout_marginLeft="10dp"/>
-
-					<LinearLayout
 						android:layout_height="wrap_content"
-						android:layout_width="match_parent"
-						android:orientation="horizontal"
-						android:id="@+id/bootloader"
-						android:background="?android:attr/selectableItemBackground"
-						android:clickable="true"
-						android:padding="4dp">
+						card_view:cardElevation="2dp"
+						card_view:cardUseCompatPadding="true"
+						card_view:cardCornerRadius="2dp"
+						android:id="@+id/cardview">
 
-						<ImageView
-							android:id="@+id/ibootloader_reboot"
-							android:layout_width="45dp"
-							android:layout_height="45dp"
-							android:layout_margin="2dp"/>
-
-						<TextView
+						<LinearLayout
 							android:layout_height="wrap_content"
-							android:layout_width="wrap_content"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:text="@string/bootloader_text"
-							android:gravity="center"
-							android:layout_gravity="center"
-							android:layout_margin="5dp"/>
+							android:layout_width="match_parent"
+							android:orientation="horizontal"
+							android:id="@+id/bootloader"
+							android:background="?android:attr/selectableItemBackground"
+							android:clickable="true"
+							android:padding="4dp">
 
-					</LinearLayout>
+							<ImageView
+								android:id="@+id/ibootloader_reboot"
+								android:layout_width="45dp"
+								android:layout_height="45dp"
+								android:layout_margin="2dp"/>
 
-					<View
-						android:background="?android:attr/dividerVertical"
-						android:layout_height="2dp"
+							<TextView
+								android:layout_height="wrap_content"
+								android:layout_width="wrap_content"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:text="@string/bootloader_text"
+								android:gravity="center"
+								android:layout_gravity="center"
+								android:layout_margin="5dp"/>
+
+						</LinearLayout>
+
+					</android.support.v7.widget.CardView>
+
+					<android.support.v7.widget.CardView
 						android:layout_width="match_parent"
-						android:layout_marginRight="10dp"
-						android:layout_marginLeft="10dp"/>
-
-					<LinearLayout
 						android:layout_height="wrap_content"
-						android:layout_width="match_parent"
-						android:orientation="horizontal"
-						android:id="@+id/shutdown"
-						android:background="?android:attr/selectableItemBackground"
-						android:clickable="true"
-						android:padding="4dp">
+						card_view:cardElevation="2dp"
+						card_view:cardUseCompatPadding="true"
+						card_view:cardCornerRadius="2dp"
+						android:id="@+id/cardview">
 
-						<ImageView
-							android:id="@+id/ishutdown_reboot"
-							android:layout_width="45dp"
-							android:layout_height="45dp"
-							android:layout_margin="2dp"/>
-
-						<TextView
+						<LinearLayout
 							android:layout_height="wrap_content"
-							android:layout_width="wrap_content"
-							android:textSize="12sp"
-							android:textStyle="bold"
-							android:text="@string/shut_down_text"
-							android:gravity="center"
-							android:layout_gravity="center"
-							android:layout_margin="5dp"/>
+							android:layout_width="match_parent"
+							android:orientation="horizontal"
+							android:id="@+id/shutdown"
+							android:background="?android:attr/selectableItemBackground"
+							android:clickable="true"
+							android:padding="4dp">
 
-					</LinearLayout>
+							<ImageView
+								android:id="@+id/ishutdown_reboot"
+								android:layout_width="45dp"
+								android:layout_height="45dp"
+								android:layout_margin="2dp"/>
 
-					<View
-						android:background="?android:attr/dividerVertical"
-						android:layout_height="2dp"
-						android:layout_width="match_parent"
-						android:layout_marginRight="10dp"
-						android:layout_marginLeft="10dp"/>
+							<TextView
+								android:layout_height="wrap_content"
+								android:layout_width="wrap_content"
+								android:textSize="12sp"
+								android:textStyle="bold"
+								android:text="@string/shut_down_text"
+								android:gravity="center"
+								android:layout_gravity="center"
+								android:layout_margin="5dp"/>
+
+						</LinearLayout>
+
+					</android.support.v7.widget.CardView>
 
 					<TextView
 						android:layout_height="wrap_content"

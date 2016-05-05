@@ -13,6 +13,7 @@ import eu.chainfire.libsuperuser.*;
 import in.ds.android.clickboot.*;
 
 import in.ds.android.clickboot.R;
+import android.support.v7.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity 
 {
@@ -25,10 +26,14 @@ public class MainActivity extends AppCompatActivity
     public static final String REBOOT_CMD = "reboot";
     public static final String REBOOT_SOFT_REBOOT_CMD = "setprop ctl.restart zygote";
 	private static final String REBOOT_BOOTLOADER_CMD = "reboot bootloader";
-    private static final String[] REBOOT_SAFE_MODE = new String[] {
-		"setprop persist.sys.safemode 1",
-		REBOOT_SOFT_REBOOT_CMD
-	};
+    
+	/**
+	 *private static final String[] REBOOT_SAFE_MODE = new String[] {
+	 *"setprop persist.sys.safemode 1",
+	 *REBOOT_SOFT_REBOOT_CMD
+	 *};
+	 **/
+	
 	public static final int BG_PRIO = android.os.Process.THREAD_PRIORITY_BACKGROUND;
 	private static final int ROOT_STATUS = R.string.root_status;
 
@@ -38,6 +43,7 @@ public class MainActivity extends AppCompatActivity
 	private TextView mTv;
 	private Effectstype effect;
 	private TextDrawable drawable1, drawable2, drawable3, drawable4, drawable5, drawable6;
+	private Toolbar mToolbar;
 
 	
     @Override
@@ -49,6 +55,9 @@ public class MainActivity extends AppCompatActivity
 
 		mCoordinatorLayout = (CoordinatorLayout)findViewById(R.id.content);
 		
+		mToolbar = (Toolbar)findViewById(R.id.toolbar);
+		setupToolbar(mToolbar);
+		
 
 		mReboot = (LinearLayout)findViewById(R.id.reboot);
 		mReboot.setOnClickListener(new View.OnClickListener(){
@@ -59,7 +68,7 @@ public class MainActivity extends AppCompatActivity
 					// TODO: Implement this method
 					final NiftyDialogBuilder dialogBuilderP1=NiftyDialogBuilder.getInstance(MainActivity.this);
 					switch (p1.getId()){
-						case R.id.reboot:effect=Effectstype.Shake;break;
+						case R.id.reboot:effect=Effectstype.Slidetop;break;
 					}
 
 					dialogBuilderP1
@@ -68,7 +77,7 @@ public class MainActivity extends AppCompatActivity
 						.withDividerColor("#11000000")
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
-						.withDialogColor("#1E88E5")
+						.withDialogColor(getColor(R.color.red))
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -110,7 +119,7 @@ public class MainActivity extends AppCompatActivity
 					// TODO: Implement this method
 					final NiftyDialogBuilder dialogBuilderP2=NiftyDialogBuilder.getInstance(MainActivity.this);
 					switch (p2.getId()){
-						case R.id.soft_reboot:effect=Effectstype.Shake;break;
+						case R.id.soft_reboot:effect=Effectstype.Fadein;break;
 					}
 
 					dialogBuilderP2
@@ -119,7 +128,7 @@ public class MainActivity extends AppCompatActivity
 						.withDividerColor("#11000000")
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
-						.withDialogColor("#1E88E5")
+						.withDialogColor(getColor(R.color.purple))
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -148,6 +157,7 @@ public class MainActivity extends AppCompatActivity
 				}
 			});
 		mSafeMode = (LinearLayout)findViewById(R.id.safe_mode);
+		mSafeMode.setVisibility(View.GONE);
 		mSafeMode.setOnClickListener(new View.OnClickListener(){
 
 				@Override
@@ -155,7 +165,7 @@ public class MainActivity extends AppCompatActivity
 				{
 					tampilkanSnackbar("Safe Mode are disabled");
 					
-					/* Safe Mode Are disabled
+					/* llSafe Mode Are disabled
 					// TODO: Implement this method
 					final NiftyDialogBuilder dialogBuilderP3=NiftyDialogBuilder.getInstance(MainActivity.this);
 					switch (p3.getId()){
@@ -204,7 +214,7 @@ public class MainActivity extends AppCompatActivity
 					// TODO: Implement this method
 					final NiftyDialogBuilder dialogBuilderP4=NiftyDialogBuilder.getInstance(MainActivity.this);
 					switch (p4.getId()){
-						case R.id.bootloader:effect=Effectstype.Shake;break;
+						case R.id.bootloader:effect=Effectstype.Newspager;break;
 					}
 
 					dialogBuilderP4
@@ -213,7 +223,7 @@ public class MainActivity extends AppCompatActivity
 						.withDividerColor("#11000000")
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
-						.withDialogColor("#1E88E5")
+						.withDialogColor(getColor(R.color.indigo))
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -248,7 +258,7 @@ public class MainActivity extends AppCompatActivity
 				{
 					final NiftyDialogBuilder dialogBuilderP5=NiftyDialogBuilder.getInstance(MainActivity.this);
 					switch (p5.getId()){
-						case R.id.recovery:effect=Effectstype.Shake;break;
+						case R.id.recovery:effect=Effectstype.RotateBottom;break;
 					}
 
 					dialogBuilderP5
@@ -257,7 +267,7 @@ public class MainActivity extends AppCompatActivity
 						.withDividerColor("#11000000")
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
-						.withDialogColor("#1E88E5")
+						.withDialogColor(getColor(R.color.red))
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -296,7 +306,7 @@ public class MainActivity extends AppCompatActivity
 					// TODO: Implement this method
 					final NiftyDialogBuilder dialogBuilderP6=NiftyDialogBuilder.getInstance(MainActivity.this);
 					switch (p6.getId()){
-						case R.id.shutdown:effect=Effectstype.Shake;break;
+						case R.id.shutdown:effect=Effectstype.RotateLeft;break;
 					}
 
 					dialogBuilderP6
@@ -305,7 +315,7 @@ public class MainActivity extends AppCompatActivity
 						.withDividerColor("#11000000")
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
-						.withDialogColor("#1E88E5")
+					   .withDialogColor(getColor(R.color.green))
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -347,10 +357,9 @@ public class MainActivity extends AppCompatActivity
 						.withTitle(getString(R.string.app_about))
 						.withTitleColor("#FFFFFF")
 						.withDividerColor("#11000000")
-						.withMessage("Copyright DSttr™ 2016 \n\n\n\nApp Version : 5.0 \n\nCREDITS :\n\nnaman14 - Material Power Button \nChainfire - SuperUser library \nLiTao - NitfiDialog Efect ")
+						.withMessage("Copyright DSttr™ 2016 \n\n\nApp Version : 6.0 \n\nCREDITS :\n\nnaman14 - Material Power Button \nChainfire - SuperUser library \nLiTao - NitfiDialog Efect ")
 						.withMessageColor("#FFFFFFFF")
-						.withDialogColor("#1E88E5")
-						.withIcon(getResources().getDrawable(R.drawable.ic_launcher))
+						.withDialogColor(getColor(R.color.colorAccent))
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -391,24 +400,31 @@ public class MainActivity extends AppCompatActivity
 			}).start();
 			
 		drawable1 = TextDrawable.builder()
-			.buildRound("R", getColor(R.color.colorAccent));
+			.buildRound("R", getColor(R.color.red));
         ((ImageView)findViewById(R.id.ireboot)).setImageDrawable(drawable1);
 		drawable2 = TextDrawable.builder()
-			.buildRound("S", getColor(R.color.colorAccent));
+			.buildRound("S", getColor(R.color.purple));
         ((ImageView)findViewById(R.id.isoft_reboot)).setImageDrawable(drawable2);
 		drawable3 = TextDrawable.builder()
-			.buildRound("S", getColor(R.color.colorAccent));
+			.buildRound("S", getColor(R.color.purple));
         ((ImageView)findViewById(R.id.isafe_reboot)).setImageDrawable(drawable3);
 	    drawable4 = TextDrawable.builder()
-			.buildRound("R", getColor(R.color.colorAccent));
+			.buildRound("R", getColor(R.color.red));
         ((ImageView)findViewById(R.id.irecover_reboot)).setImageDrawable(drawable4);
 		drawable5 = TextDrawable.builder()
-			.buildRound("B", getColor(R.color.colorAccent));
+			.buildRound("B", getColor(R.color.indigo));
         ((ImageView)findViewById(R.id.ibootloader_reboot)).setImageDrawable(drawable5);
 		drawable6 = TextDrawable.builder()
-			.buildRound("P", getColor(R.color.colorAccent));
+			.buildRound("P", getColor(R.color.green));
         ((ImageView)findViewById(R.id.ishutdown_reboot)).setImageDrawable(drawable6);
     }
+
+	private void setupToolbar(Toolbar mToolbar)
+	{
+		// TODO: Implement this method
+		mToolbar.setTitle(R.string.app_name);
+		setSupportActionBar(mToolbar);
+	}
 	
 	private void showRingProgressDialog(){
         final ProgressDialog ringProgressDialog = ProgressDialog.show(MainActivity.this, "Memulai....", "Tunggu beberapa saat.");
