@@ -10,10 +10,13 @@ import android.view.*;
 import android.widget.*;
 import com.gitonway.lee.niftymodaldialogeffects.lib.*;
 import eu.chainfire.libsuperuser.*;
-import in.ds.android.clickboot.*;
 
 import in.ds.android.clickboot.R;
 import android.support.v7.widget.Toolbar;
+import com.google.android.gms.ads.*;
+import com.amulyakhare.textdrawable.*;
+import com.amulyakhare.textdrawable.util.*;
+import android.content.res.*;
 
 public class MainActivity extends AppCompatActivity 
 {
@@ -34,6 +37,18 @@ public class MainActivity extends AppCompatActivity
 	 *};
 	 **/
 	
+	//Generator RandomColor
+	ColorGenerator generator = ColorGenerator.MATERIAL;
+	 
+	int color1 = generator.getRandomColor();
+	int color2 = generator.getRandomColor();
+	int color3 = generator.getRandomColor();
+	int color4 = generator.getRandomColor();
+	int color5 = generator.getRandomColor();
+	int color6 = generator.getRandomColor();
+	
+	//**//
+	
 	public static final int BG_PRIO = android.os.Process.THREAD_PRIORITY_BACKGROUND;
 	private static final int ROOT_STATUS = R.string.root_status;
 
@@ -44,6 +59,7 @@ public class MainActivity extends AppCompatActivity
 	private Effectstype effect;
 	private TextDrawable drawable1, drawable2, drawable3, drawable4, drawable5, drawable6;
 	private Toolbar mToolbar;
+	private AdView mAdView;
 
 	
     @Override
@@ -51,6 +67,13 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+		
+		MobileAds.initialize(getApplicationContext(), "ca-app-pub-1966693896213133/8454487201");
+		mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+		//mAdView.setAdSize(AdSize.SMART_BANNER);
+		
 		mTv = (TextView)findViewById(R.id.text);
 
 		mCoordinatorLayout = (CoordinatorLayout)findViewById(R.id.content);
@@ -77,7 +100,7 @@ public class MainActivity extends AppCompatActivity
 						.withDividerColor("#11000000")
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
-						.withDialogColor(getColor(R.color.red))
+						.withDialogColor(color1)
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -128,7 +151,7 @@ public class MainActivity extends AppCompatActivity
 						.withDividerColor("#11000000")
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
-						.withDialogColor(getColor(R.color.purple))
+						.withDialogColor(color2)
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -223,7 +246,7 @@ public class MainActivity extends AppCompatActivity
 						.withDividerColor("#11000000")
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
-						.withDialogColor(getColor(R.color.indigo))
+						.withDialogColor(color3)
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -267,7 +290,7 @@ public class MainActivity extends AppCompatActivity
 						.withDividerColor("#11000000")
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
-						.withDialogColor(getColor(R.color.red))
+						.withDialogColor(color4)
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -315,7 +338,7 @@ public class MainActivity extends AppCompatActivity
 						.withDividerColor("#11000000")
 						.withMessage(getString(R.string.confirm))
 						.withMessageColor("#FFFFFFFF")
-					   .withDialogColor(getColor(R.color.green))
+					   .withDialogColor(color5)
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -357,9 +380,9 @@ public class MainActivity extends AppCompatActivity
 						.withTitle(getString(R.string.app_about))
 						.withTitleColor("#FFFFFF")
 						.withDividerColor("#11000000")
-						.withMessage("Copyright DSttr™ 2016 \n\n\nApp Version : 6.0 \n\nCREDITS :\n\nnaman14 - Material Power Button \nChainfire - SuperUser library \nLiTao - NitfiDialog Efect ")
+						.withMessage("Copyright DSttr™ 2016 \n\n\nApp Version : 7.0 \n\nCREDITS :\n\nnaman14 - Material Power Button \nChainfire - SuperUser library \nLiTao - NitfiDialog Efect ")
 						.withMessageColor("#FFFFFFFF")
-						.withDialogColor(getColor(R.color.colorAccent))
+						.withDialogColor(color6)
 						.isCancelableOnTouchOutside(false)
 						.withDuration(ANIMATION_DURATION)
 						.withEffect(effect)
@@ -400,22 +423,40 @@ public class MainActivity extends AppCompatActivity
 			}).start();
 			
 		drawable1 = TextDrawable.builder()
-			.buildRound("R", getColor(R.color.red));
+			.beginConfig()
+			.withBorder(6)
+			.endConfig()
+			.buildRound("R", color1);
         ((ImageView)findViewById(R.id.ireboot)).setImageDrawable(drawable1);
 		drawable2 = TextDrawable.builder()
-			.buildRound("S", getColor(R.color.purple));
+			.beginConfig()
+			.withBorder(6)
+			.endConfig()
+			.buildRound("S", color2);
         ((ImageView)findViewById(R.id.isoft_reboot)).setImageDrawable(drawable2);
 		drawable3 = TextDrawable.builder()
-			.buildRound("S", getColor(R.color.purple));
+			.beginConfig()
+			.withBorder(6)
+			.endConfig()
+			.buildRound("S", color6);
         ((ImageView)findViewById(R.id.isafe_reboot)).setImageDrawable(drawable3);
 	    drawable4 = TextDrawable.builder()
-			.buildRound("R", getColor(R.color.red));
+			.beginConfig()
+			.withBorder(6)
+			.endConfig()
+			.buildRound("R", color4);
         ((ImageView)findViewById(R.id.irecover_reboot)).setImageDrawable(drawable4);
 		drawable5 = TextDrawable.builder()
-			.buildRound("B", getColor(R.color.indigo));
+			.beginConfig()
+			.withBorder(6)
+			.endConfig()
+			.buildRound("B", color3);
         ((ImageView)findViewById(R.id.ibootloader_reboot)).setImageDrawable(drawable5);
 		drawable6 = TextDrawable.builder()
-			.buildRound("P", getColor(R.color.green));
+			.beginConfig()
+			.withBorder(6)
+			.endConfig()
+			.buildRound("P", color5);
         ((ImageView)findViewById(R.id.ishutdown_reboot)).setImageDrawable(drawable6);
     }
 
@@ -472,6 +513,33 @@ public class MainActivity extends AppCompatActivity
 	private void tampilkanSnackbar(String message) {
 		Snackbar.make(mCoordinatorLayout, message, Snackbar.LENGTH_LONG).show();
 	}
+	
+	/** Called when leaving the activity */
+    @Override
+    public void onPause() {
+        if (mAdView != null) {
+            mAdView.pause();
+        }
+        super.onPause();
+    }
+
+    /** Called when returning to the activity */
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mAdView != null) {
+            mAdView.resume();
+        }
+    }
+
+    /** Called before the activity is destroyed */
+    @Override
+    public void onDestroy() {
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
+        super.onDestroy();
+    }
 
 	
 }
